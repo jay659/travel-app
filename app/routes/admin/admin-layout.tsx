@@ -1,15 +1,19 @@
 import { Outlet } from "react-router";
 
+import { NavItems , MobileSidebar } from "../../../components";
+
+
+
 function AdminLayout() {
   return (
-    <>
-      <div>admin-layout</div>
-      <aside className="w-64 h-screen bg-gray-800 text-white">
-        <aside className="childern">
-            <Outlet />
-        </aside>
+    <section className="admin-layout">
+      < MobileSidebar />
+      <aside className="w-max max-w-[270px] hidden lg:block"> 
+        <NavItems />
+    
       </aside>
-    </>
+      <Outlet />
+    </section>
   )
 }
 

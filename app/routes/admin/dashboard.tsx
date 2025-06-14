@@ -1,13 +1,7 @@
-import type { Route } from "./+types/dashboard";
-
-function Dashboard({
-  params,
-}: Route.ComponentProps) {
+function Dashboard() {
   return (
     <>
-    <div> { params.userId }</div>
-    <br/>
-    <div> { params.teamId }</div>
+        <h1>Dashboard</h1>
     </>
 
   )
