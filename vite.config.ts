@@ -1,19 +1,27 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
- 
-   optimizeDeps: {
-    include: ['@syncfusion/ej2-base'],
+    plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  optimizeDeps: {
+    include: [
+      '@syncfusion/ej2-base',
+      '@syncfusion/ej2-react-navigations',
+      '@syncfusion/ej2-react-buttons'
+    ],
     esbuildOptions: {
-      // Node.js global to browser globalThis
       define: {
-        global: 'globalThis'
-      }
-    }
-  }
+        global: 'globalThis',
+      },
+    },
+  },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
+       include: [/node_modules/],
+    },
+  },
 });

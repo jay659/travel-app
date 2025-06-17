@@ -22,11 +22,33 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+// Syncfusion License Registration - Correct Approach
+import * as ej2Base from '@syncfusion/ej2-base';
 
-import syncfusionPkg from '@syncfusion/ej2-base';
-const { registerLicense } = syncfusionPkg;
+// Register license safely
+const registerSyncfusionLicense = () => {
+  try {
+    // Handle both ESM and CJS cases
+    const licenseManager = (ej2Base as any).default || ej2Base;
+    const licenseKey = import.meta.env.VITE_SYNCFUSION_LICENSE;
+    
+    if (!licenseKey) {
+      throw new Error('Syncfusion license key is not defined in environment variables');
+    }
+    
+    if (licenseManager && typeof licenseManager.registerLicense === 'function') {
+      licenseManager.registerLicense(licenseKey);
+    } else {
+      console.warn('Syncfusion running in trial mode - registerLicense not found');
+    }
+  } catch (error) {
+    console.error('Syncfusion license registration failed:', error);
+    // Continue in trial mode
+  }
+};
 
-registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE);
+// Call the registration function
+registerSyncfusionLicense();
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
