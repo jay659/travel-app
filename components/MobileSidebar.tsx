@@ -17,7 +17,6 @@ const MobileSidebar = () => {
   }, []);
 
   const toggleSidebar = () => {
-    
     if (sidebarRef.current) {
       sidebarRef.current.toggle();
     }
@@ -76,8 +75,6 @@ const MobileSidebar = () => {
         closeOnDocumentClick={true}
         showBackdrop={true}
         type="Over"
-       
-       
       >
         <div className="p-4">
           <NavItems handleClick={toggleSidebar} />

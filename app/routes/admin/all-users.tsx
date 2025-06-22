@@ -1,8 +1,13 @@
-import React from 'react'
-
+import { Header } from "../../../components";
 function AllUser() {
   return (
-    <div>AllUser</div>
+    <main className="dashboard wrapper">
+      <Header 
+        title= "Trips Page"
+        description = "check out all the trips booked by users, manage bookings, and explore new destinations with ease."
+
+      />
+    </main>
   )
 }
 

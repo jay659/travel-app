@@ -1,14 +1,20 @@
-import React from 'react';
-import btnc from '@syncfusion/ej2-react-buttons';
+import React, { useEffect, useState } from 'react';
 
-const { ButtonComponent } = btnc;
+const App = () => {
+  
+  const [count , setCount ] = useState<number>(0);
+  useEffect(()=>{
+    console.log('useeffect',    count)
+  },[count])
 
-
-const App= () => {
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Syncfusion Button Example</h1>
-      <ButtonComponent >Click Me</ButtonComponent>
+     <button onClick={()=> {
+        setCount( count => count +1 )
+        console.log(count)
+
+
+     }}>count {count}</button>
     </div>
   );
 };

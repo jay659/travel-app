@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { sidebarItems } from '~/constants';
 import { cn } from '~/lib/utils';
 
-function NavItems() {
+function NavItems({handleClick}:{handleClick:()=>void}) {
   const user = {
     "name": "jay Patel",
     "email": "jay400479@gmail.com",
@@ -22,8 +22,8 @@ function NavItems() {
                 <NavLink to={href} key={id}>
                         {({isActive}:{isActive:boolean}) => (
                             <div className={cn( "group nav-item",{
-                                isActive: "bg-primary-100 text-white",
-                            })}>
+                                isActive: "bg-primary-100 text-dark",
+                            })} onClick={handleClick}>
                                 <img 
                                     src={icon} 
                                     alt={label}
@@ -42,11 +42,7 @@ function NavItems() {
                     <h2>{user.name}</h2>
                     <p>{user.email}</p>
                 </article>
-                <button className='cursor-pointer' 
-                onClick={() =>{
-                    console.log('logout');
-                }}
-                >
+                <button className='cursor-pointer'>
                     <img src ="/assets/icons/logout.svg" alt="logout" className='size-5' />
                 </button>
             </footer>
