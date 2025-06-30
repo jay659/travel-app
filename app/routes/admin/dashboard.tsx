@@ -1,5 +1,5 @@
 import TripsCard from "components/TripsCard";
-import { Header,StatsCard,HeadingText } from "../../../components";
+import { Header,StatsCard,HeadingText, } from "../../../components";
 import {user, dashboardStats, allTrips} from "~/constants";
 
 function Dashboard() { 

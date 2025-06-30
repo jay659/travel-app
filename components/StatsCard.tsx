@@ -9,7 +9,7 @@ const StatsCard = ({id,headerTitle,total,lastMonthCount,currentMonthCount} : Sta
           <div className="dashoard-stats" key={id} >
               <h3 className="text-base text-bold-100 font-semibold">{headerTitle}</h3>
               <p className="text-3xl text-bold-100 font-bold py-3">{total}</p>
-              <div className="flex" >              
+              <div className="flex">              
                 <img 
                   src={`/assets/icons/arrow${trend === "increment" ?'-up-green.svg': '-down-red.svg'}`}
                   alt="trend"/>

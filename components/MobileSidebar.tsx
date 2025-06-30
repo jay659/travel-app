@@ -29,7 +29,7 @@ const MobileSidebar = () => {
           {/* Loading state for header */}
           <div className="flex items-center gap-2">
             <div className="size-[30px] bg-gray-200 rounded"></div>
-            <h1 className="text-xl font-bold">Tourvisto</h1>
+            <h1 className="text-xl font-bold">Travel App</h1>
           
           </div>
           <div className="size-7 bg-gray-200 rounded"></div>
@@ -51,7 +51,7 @@ const MobileSidebar = () => {
             alt="Logo"
             className="size-[30px]"
           />
-          <h1 className="text-xl font-bold">Tourvisto</h1>
+          <h1 className="text-xl font-bold">Travel App</h1>
              
         </Link>
 

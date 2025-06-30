@@ -77,10 +77,10 @@ declare interface Trip {
 declare interface TripCardProps {
   id: string;
   name: string;
-  location: string;
-  imageUrl: string;
+   itinerary: Array<{ location: string }>;
+  imageUrls: string[];
   tags: string[];
-  price: string;
+  estimatedPrice: string;
 }
 
 declare interface StatsCard {
