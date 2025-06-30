@@ -140,3 +140,71 @@ export const RIGHT_CONFETTI = {
   angle: 135,
   origin: { x: 1, y: 1 },
 };
+export const user ={
+  name: "jay"
+}
+export const dashboardStats =[
+  {
+  id:1,
+  title: "Total Users",
+  total: 12450,
+  diffrence:{currentmonth: 4000 , lastmonth : 3500}
+  },
+  {
+  id:2,
+  title: "Total Trips",
+  total: 3000,
+  diffrence: {currentmonth: 500, lastmonth: 600}
+  },
+  {
+  id:3,
+  title: "Active Users Today",
+  total: 460,
+  diffrence: {currentmonth: 200, lastmonth: 180}}
+]
+export const allTrips = [{
+  id: 1,
+  name: "Tropical Rewind",
+  imageUrls: ["/assets/images/sample1.jpg"],
+  itinerary: [{ location: "Thailand" }],
+  tags: ["Adventure", "Culture"],
+  travelStyle: "Solo",
+  estimatedPrice: "$1,000",
+},
+{
+  id: 2,
+  name: "French Reverie",
+  imageUrls: ["/assets/images/sample2.jpg"],
+  itinerary: [{ location: "Paris" }],
+  tags: ["Relaxation", "Culinary"],
+  travelStyle: "Family",
+  estimatedPrice: "$2,000",
+},
+{
+  id: 3,
+  name: "Zen Break",
+  imageUrls: ["/assets/images/sample3.jpg"],
+  itinerary: [{ location: "Japan" }],
+  tags: ["Shopping", "Luxury"],
+  travelStyle: "Couple",
+  estimatedPrice: "$3,000",
+},
+{
+  id: 4,
+  name: "Adventure in Westeros",
+  imageUrls: ["/assets/images/sample4.jpg"],
+  itinerary: [{ location: "Croatia" }],
+  tags: ["Historical", "Culture"],
+  travelStyle: "Friends",
+  estimatedPrice: "$4,000",
+},
+{
+  id: 5,
+  name: "test",
+  imageUrls: ["/assets/images/sample3.jpg"],
+  itinerary: [{ location: "Japan" }],
+  tags: ["Shopping", "Luxury"],
+  travelStyle: "Couple",
+  estimatedPrice: "$3,000",
+},
+];

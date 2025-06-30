@@ -1,18 +1,8 @@
-import { Header,StatsCard } from "../../../components";
-function Dashboard() {
-  const user ={
-    name: "jay"
-  }
-  const dashboardStats ={
-    totalUsers: 12450,
-    userJoined:{currentmonth: 4000 , lastmonth : 3500},
-    totalTrips: 3000,
-    tripsCreated: {currentmonth: 500, lastmonth: 600},
-    totalActiveUsers: 460,
-    activeUsers: {currentmonth: 200, lastmonth: 180},
-  }
+import TripsCard from "components/TripsCard";
+import { Header,StatsCard,HeadingText } from "../../../components";
+import {user, dashboardStats, allTrips} from "~/constants";
 
-  const { totalUsers, userJoined, totalTrips, tripsCreated, totalActiveUsers, activeUsers } = dashboardStats;
+function Dashboard() { 
 
   return (
     <main className="dashboard wrapper">
@@ -21,31 +11,32 @@ function Dashboard() {
         description = "Track your trips, manage your bookings, and explore new destinations with ease."
       />
       
-        <div className="grid lg:grid-flow-col grid-row-3 gap-2 ">
+    <section className="grid lg:grid-flow-col grid-row-3 gap-2 ">
+      {dashboardStats.map(({id,title,total,diffrence}) => (
+        <StatsCard id={id} headerTitle={title} total={total} lastMonthCount={diffrence.lastmonth} currentMonthCount={diffrence.currentmonth} />
+      ))}
+    </section>
 
-        <StatsCard 
-          headerTitle = "Total Users"
-          total = {totalUsers}
-          lastMonthCount = {userJoined.lastmonth}
-          currentMonthCount = {userJoined.currentmonth}
-        />
-        <StatsCard 
-          headerTitle = "Total Trips"
-          total = {totalTrips}
-          lastMonthCount = {tripsCreated.lastmonth}
-          currentMonthCount = {tripsCreated.currentmonth}
-        />
-        <StatsCard 
-          headerTitle = "Active Users Today"
-          total = {totalActiveUsers}
-          lastMonthCount = {activeUsers.lastmonth}
-          currentMonthCount = {activeUsers.currentmonth}
-        />
-        </div>
+    <section className="container">
+      <HeadingText title="Recent Trips" size={2}/>
+      <div className="grid lg:grid-flow-col  gap-3">
+        {allTrips.slice(0,4).map(({id,name,imageUrls,estimatedPrice,itinerary,tags}) =>(
+          <TripsCard 
+           
+            id={id} 
+            name={name} 
+            imageUrls={imageUrls} 
+            estimatedPrice={estimatedPrice} 
+            itinerary={itinerary} 
+            tags={tags}
+            />
+        ))}
+      </div>
+    </section>
+
+
     </main>
- 
   )
-
 }
 
 export default Dashboard
